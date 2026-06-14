@@ -98,8 +98,8 @@ Visit **http://localhost:5173** → Register → Start using AURA!
 
 | Method | Endpoint                  | Auth | Description                 |
 |--------|---------------------------|------|-----------------------------|
-| POST   | /api/auth/register        | ❌   | Register new user           |
-| POST   | /api/auth/login           | ❌   | Login, get JWT token        |
+| POST   | /api/auth/register        | ✅   | Register new user           |
+| POST   | /api/auth/login           | ✅   | Login, get JWT token        |
 | GET    | /api/auth/profile         | ✅   | Get logged-in user          |
 | POST   | /api/chat/message         | ✅   | Send message to AI          |
 | GET    | /api/chat/history         | ✅   | Get chat history            |
