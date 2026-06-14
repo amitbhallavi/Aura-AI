@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Base body styles */
+body {
+  background-color: #0a0c10;
+  color: #e8eaf0;
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Font utility classes */
+.font-display { font-family: "Syne", sans-serif; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6c63ff, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Typing animation dots */
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+.typing-dot {
+  animation: typing-bounce 1.2s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+/* ============ AURA LIGHT THEME — Global Component Override ============ */
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* All dark cards/surfaces → white */
+[data-theme="light"] .bg-\[\#0a0c10\],
+[data-theme="light"] .bg-\[\#0f1117\],
+[data-theme="light"] .bg-\[\#151820\],
+[data-theme="light"] .bg-\[\#1a1d27\],
+[data-theme="light"] .bg-\[\#1e2130\] {
+  background-color: #ffffff !important;
+}
+
+/* Page backgrounds → light gray */
+[data-theme="light"] main,
+[data-theme="light"] .min-h-screen {
+  background-color: #f4f6fb !important;
+}
+
+/* All white/light text → dark */
+[data-theme="light"] .text-white\/90,
+[data-theme="light"] .text-white\/80,
+[data-theme="light"] .text-white\/70 {
+  color: #1c1e2e !important;
+}
+[data-theme="light"] .text-white\/50,
+[data-theme="light"] .text-white\/40 {
+  color: #4a4e6b !important;
+}
+[data-theme="light"] .text-white\/30,
+[data-theme="light"] .text-white\/25,
+[data-theme="light"] .text-white\/20 {
+  color: #9196b5 !important;
+}
+/* Borders → light */
+[data-theme="light"] .border-white\/\[0\.06\],
+[data-theme="light"] .border-white\/\[0\.08\],
+[data-theme="light"] .border-white\/\[0\.12\] {
+  border-color: rgba(99,102,145,0.15) !important;
+}
+
+/* Input fields */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background-color: #f0f2f8 !important;
+  color: #1c1e2e !important;
+  border-color: rgba(99,102,145,0.2) !important;
+}
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #9196b5 !important;
+}
+
+/* Cards with border */
+[data-theme="light"] [class*="border"][class*="rounded"] {
+  border-color: rgba(99,102,145,0.15) !important;
+}
+
+/* Gradient text (AURA logo etc) stays accent */
+[data-theme="light"] .gradient-text {
+  background: linear-gradient(135deg, #5b52f0, #a855f7) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Accent purple buttons stay same */
+[data-theme="light"] .bg-\[\#6c63ff\] {
+  background-color: #5b52f0 !important;
+}
+
+/* Shadow/glow effects → lighter */
+[data-theme="light"] [class*="shadow"] {
+  box-shadow: 0 1px 3px rgba(99,102,145,0.15) !important;
+}
+
+/* Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(99,102,145,0.2) !important;
+}

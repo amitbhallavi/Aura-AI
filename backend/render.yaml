@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: aura-backend
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
+    # Health check to ensure service is running
+    healthCheckPath: /health
+
+databases:
+  - name: aura-postgres
+    plan: starter
+    databaseName: aura_db
+    # Credentials are auto-generated and added to service env vars as DATABASE_URL
+    # Extract and use: PG_HOST, PG_PORT, PG_USER, PG_PASSWORD, PG_DATABASE

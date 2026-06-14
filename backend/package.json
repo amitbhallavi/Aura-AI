@@ -1,0 +1,38 @@
+{
+  "name": "aura-backend",
+  "version": "1.0.0",
+  "description": "AURA AI Assistant Platform - Backend",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon --env-file=.env src/app.js",
+    "start": "node src/app.js",
+    "build": "echo 'No build needed for Node.js backend'"
+  },
+  "dependencies": {
+    "@google/genai": "^2.4.0",
+    "@google/generative-ai": "^0.24.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.0.0",
+    "googleapis": "^171.4.0",
+    "groq-sdk": "^1.1.1",
+    "helmet": "^7.0.0",
+    "ioredis": "^5.3.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^7.1.0",
+    "mongoose": "^8.23.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "node-cron": "^3.0.3",
+    "openai": "^4.0.0",
+    "pg": "^8.11.0",
+    "razorpay": "^2.9.6",
+    "socket.io": "^4.8.3",
+    "twilio": "^4.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
