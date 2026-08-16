@@ -56,7 +56,7 @@ app.use(helmet());
 // CORS Configuration — only allow whitelisted origins
 // ============================================================
 const corsOrigins = process.env.CORS_ORIGINS?.split(",") || [];
-const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+const frontendUrl = process.env.FRONTEND_URLS || "http://localhost:5173";
 
 // In development, allow localhost; in production, only allow specified origins
 const allowedOrigins = process.env.NODE_ENV === "development" 
