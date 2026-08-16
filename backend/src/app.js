@@ -106,6 +106,14 @@ app.use("/api/phone-config", generalLimiter, phoneConfigRoutes);
 app.use("/api/caller-id", generalLimiter, callerIdRoutes);
 app.use("/api/webhooks", generalLimiter, webhookRoutes);
 
+app.get('/', (req, res) => {
+  res.json({
+    status: 'AURA AI Backend is running ✅',
+    health: '/health',
+    docs: 'https://aura-ai-m710.onrender.com/health'
+  });
+});
+
 app.get("/twiml", (req, res) => {
   res.type("text/xml");
   res.send(buildPhoneTwiml(req.query.message));
