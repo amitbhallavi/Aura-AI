@@ -64,9 +64,10 @@ export default function Login() {
     if (login.fulfilled.match(result)) navigate(localStorage.getItem("aura_selected_plan") ? "/pricing" : "/dashboard");
   }
 
-  function handleSocialAuth(provider) {
-    window.location.href = `${API_BASE_URL}/auth/${provider}`;
-  }
+function handleSocialAuth(provider) {
+  const base = API_BASE_URL.endsWith("/api") ? API_BASE_URL : `${API_BASE_URL}/api`;
+  window.location.href = `${base}/auth/${provider}`;
+}
 
   const isDark = theme === "dark";
   const authError = error || oauthError;
