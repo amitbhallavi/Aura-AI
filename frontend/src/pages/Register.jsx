@@ -78,7 +78,8 @@ export default function Register() {
   }
 
   function handleSocialAuth(provider) {
-    window.location.href = `${API_BASE_URL}/auth/${provider}`;
+    const base = API_BASE_URL.endsWith("/api") ? API_BASE_URL : `${API_BASE_URL}/api`;
+    window.location.href = `${base}/auth/${provider}`;
   }
 
   const inputStyle = { width: "100%", background: colors.input, border: `1px solid ${colors.inputBorder}`, borderRadius: 12, padding: "11px 16px", fontSize: 14, color: colors.textPrimary, outline: "none", boxSizing: "border-box" };
